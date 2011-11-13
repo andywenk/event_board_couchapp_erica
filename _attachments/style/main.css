@@ -1,0 +1,66 @@
+/* add styles here */
+body {
+  font: 13px Arial, sans-serif;
+  background-color: #ddd;
+  margin: 0;
+}
+h1, h2, h3 {
+  margin-top: 0;
+}
+
+form {
+  padding: 4px;
+  margin: 6px;
+} 
+#main{
+  border: 2px solid #000099;
+  border-top: 0;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 20px;
+  width: 900px;
+  background-color: #fff;
+}
+#navigation ul {
+  margin: 10px 0 10px 0;
+  padding: 0;
+  border-bottom: 1px solid #000099;
+}
+#navigation ul li {
+  font-size: 15px;
+  list-style: none;
+  display: inline-block;
+  padding: 0 10px 10px 0;
+  color: #000099;
+} 
+.event {
+  border: 2px solid #000099;
+  background: #eee;
+  padding: 8px;
+  width: 400px;
+  margin-bottom: 10px;
+}
+span.message {
+  margin: 5px 0 5px 0;
+  color: #990000;
+  font-weight: bold;
+  display: inline-block;
+  background-color: #eee;
+  border: 1px solid #ddd;
+  padding: 2px;
+}
+div.row label {
+  display: inline-block;
+  width: 120px;
+}
+div.row input {
+  width: 200px;
+  padding: 2px;
+  border: 1px solid #000099;
+}
+div.row input[type="submit"] {
+  width: 100px;
+  color: #000099;
+  background-color: #fff;
+  font-weight: bold;
+}

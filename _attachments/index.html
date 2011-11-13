@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+    <title>Event Board</title>
+    <link rel="stylesheet" href="style/main.css" type="text/css">
+  </head>
+  <body>
+    <div id="main">
+      <h1>Event Board CouchApp</h1>
+      <div id="navigation">
+          <ul>
+              <li class="js_events">&raquo;&nbsp;Events</li>
+              <li class="js_create_event">&raquo;&nbsp;Neues Event erstellen</li>
+          </ul>
+      </div>
+      <span class="message"></span>
+      <div id="content" style="display: none;">&nbsp;</div>
+      <br />
+    </div>
+  </body>
+  <script src="/_utils/script/json2.js"></script>
+  <script src="/_utils/script/jquery.js"></script>
+  <script src="/_utils/script/jquery.couch.js"></script>
+  <script src="couchapp/jquery.mustache.js"></script>
+
+  <!-- templates used by app.js -->
+  <script id="create_event" type="text/x-mustache" charset="utf-8">
+    <h2>Neues Event anlegen</h2>
+    <form id="save_event_form">
+    <div class="row">
+      <label>Typ:</label>
+      <select name="type">
+        <option value="event">Event</option>
+        <!--
+        <option value="concert">Konzert</option>
+        <option value="party">Party</option> 
+        -->
+      </select>
+    </div>
+    <div class="row">
+      <label>Datum:</label>
+      <input type="date" name="date" value=""> [yyyy-mm-dd]
+    </div>
+    <div class="row">
+      <label>Location:</label>
+      <input type="text" name="location" value="">
+    </div>
+    <div class="row">
+      <label>Stadt:</label>
+      <input type="text" name="city" value="">
+    </div>
+    <div class="row">
+      <label>Info:</label>
+      <input type="text" name="info" value="">
+    </div>
+    <div class="row">
+      <label>Eintritt:</label>
+      <input type="text" name="price" value="">
+    </div>
+    <div class="row">
+      <label>Tags:</label>
+      <input type="text" name="tags" value="">
+    </div>
+    <div class="row">
+      <label>&nbsp;</label>
+      <input class="js_submit" type="submit" name="submit" value="speichern">
+    </div>
+    </form>
+  </script>
+
+  <script id="events" type="text/x-mustache" charset="utf-8">
+  <h2>Events</h2>
+  {{#event}}
+    <div class="event">
+      <h3><i>{{type}}</i>: {{location}} - {{city}} (<a href="#" class="js_delete" title='{"_id":"{{id}}","_rev":"{{rev}}"}'>del)</a></h3>
+      <p>
+        {{info}}
+        <span class="price">Eintritt: {{price}}</span>
+        <span class="tags">Tags: {{tags}}</span>
+      </p>
+      <span class="date">{{date}}</span>
+    </div>
+  {{/event}}
+  </script>
+  <script src="script/app.js"></script>
+</html>
